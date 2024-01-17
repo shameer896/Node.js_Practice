@@ -8,3 +8,7 @@ app.listen(3000)
 app.get('/',(req,res)=>{
     res.send('<h1>hi</h1>')
 })
+
+app.get('/about',(req,res)=>{
+    res.send('<h1>About</h1>')
+})
