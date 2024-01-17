@@ -12,3 +12,7 @@ app.get('/',(req,res)=>{
 app.get('/about',(req,res)=>{
     res.send('<h1>About</h1>')
 })
+
+app.use((req,res)=>{
+    res.sendFile('./404.html',{ root : __dirname})
+})
