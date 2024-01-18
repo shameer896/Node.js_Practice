@@ -9,7 +9,8 @@ app.set("view engine", "ejs");
 app.listen(3000);
 
 app.get("/", (req, res) => {
-  res.render("index", { title: "home" });
+  const blog = [{ b: 2 }, { b: 4 }, { b: 6 }];
+  res.render("index", { title: "home", blog });
 });
 
 app.get("/about", (req, res) => {
@@ -17,5 +18,5 @@ app.get("/about", (req, res) => {
 });
 
 app.use((req, res) => {
-  res.render("404", { title: 'Error - 404' });
+  res.render("404", { title: "Error - 404" });
 });

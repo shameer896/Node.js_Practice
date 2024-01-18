@@ -6,6 +6,11 @@
     <title><%= title %></title>
   </head>
   <body>
+    <% if(blog.length > 0 ) { blog.forEach(b=>{%>
+
+    <h1><%=b.b%><br /></h1>
+
+    <%})}%>
     <h1>hi</h1>
   </body>
 </html>
