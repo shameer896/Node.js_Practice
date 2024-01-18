@@ -6,7 +6,7 @@
     <title><%= title %></title>
   </head>
   <body>
-    <% if(blog.length > 0 ) { blog.forEach(b=>{%>
+    <%-include('./partials/nav')%> <% if(blog.length > 0 ) { blog.forEach(b=>{%>
 
     <h1><%=b.b%><br /></h1>
 
