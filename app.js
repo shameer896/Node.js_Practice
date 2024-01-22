@@ -1,4 +1,6 @@
 const express = require("express");
+const morgan = require("morgan");
+
 //express app
 const app = express();
 
@@ -8,11 +10,7 @@ app.set("view engine", "ejs");
 //listen for request
 app.listen(3000);
 
-app.use((req, res, next) => {
-  console.log("Host: ", req.hostName);
-  console.log("Path: ", req.path);
-  next();
-});
+app.use(morgan('dev'));
 
 app.get("/", (req, res) => {
   const blog = [{ b: 2 }, { b: 4 }, { b: 6 }];
