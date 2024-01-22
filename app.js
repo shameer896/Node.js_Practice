@@ -1,6 +1,9 @@
 const express = require("express");
 const morgan = require("morgan");
 
+//connect to mongo db
+const db='mongodb+srv://shameerak896:59pNSmZxHKLpsh6K@cluster0.qn9jiea.mongodb.net/?retryWrites=true&w=majority'
+
 //express app
 const app = express();
 
