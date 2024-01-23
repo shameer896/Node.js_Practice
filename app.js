@@ -1,9 +1,15 @@
 const express = require("express");
 const morgan = require("morgan");
+const mongoose = require("mongoose");
+const { result } = require("lodash");
 
 //connect to mongo db
-const db='mongodb+srv://shameerak896:59pNSmZxHKLpsh6K@cluster0.qn9jiea.mongodb.net/?retryWrites=true&w=majority'
-
+const db =
+  "mongodb+srv://user1:test1234@cluster0.qn9jiea.mongodb.net/?retryWrites=true&w=majority";
+mongoose
+  .connect(db)
+  .then((result) => console.log("db connected"))
+  .catch((err) => console.log(err));
 //express app
 const app = express();
 
@@ -13,7 +19,7 @@ app.set("view engine", "ejs");
 //listen for request
 app.listen(3000);
 
-app.use(morgan('dev'));
+app.use(morgan("dev"));
 
 app.get("/", (req, res) => {
   const blog = [{ b: 2 }, { b: 4 }, { b: 6 }];
